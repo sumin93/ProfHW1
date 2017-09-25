@@ -2,7 +2,7 @@ package task3;
 
 import java.util.ArrayList;
 
-public class Box <T extends Fruit> {
+public class Box<T extends Fruit & Boxable> {
     private ArrayList<T> fruits = new ArrayList<>();
 
     public void addFruit(T fruit){
@@ -14,7 +14,7 @@ public class Box <T extends Fruit> {
         return fruits.size()*fruits.get(0).weight;
     }
 
-    public <B extends Fruit> boolean compare(Box<B> comparedBox){
+    public <B extends Fruit & Boxable> boolean compare(Box<B> comparedBox) {
         return Math.abs(this.getWeight() - comparedBox.getWeight())< 0.001;
     }
 

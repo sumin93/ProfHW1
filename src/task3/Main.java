@@ -10,6 +10,8 @@ public class Main {
         Box<Orange> orangeBox2 = new Box<>();
         Box<Orange> orangeBox3 = new Box<>();
 
+        appleBox1.transportTo(appleBox2);
+
 
         for(int i = 0; i < 9; i++) appleBox1.addFruit(new Apple());
         for(int i = 0; i < 10; i++) appleBox2.addFruit(new Apple());
@@ -19,9 +21,6 @@ public class Main {
 
         System.out.println(appleBox1.compare(orangeBox1));
 
-        //Вот тут косяк:
-        Box<Fruit> fruitBox = new Box<>();
-        fruitBox.addFruit(new Apple());
-        fruitBox.addFruit(new Orange());
+
     }
 }
